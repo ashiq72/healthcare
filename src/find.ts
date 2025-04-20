@@ -1,4 +1,5 @@
 import { PrismaClient } from "@prisma/client";
+import { title } from "process";
 
 const prisma = new PrismaClient();
 
@@ -17,6 +18,9 @@ const main = async () => {
   const findUnique = await prisma.post.findUniqueOrThrow({
     where: {
       id: 2,
+    },
+    select: {
+      title: true,
     },
   });
   console.log(findUnique);
