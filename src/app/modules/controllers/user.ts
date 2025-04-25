@@ -12,7 +12,7 @@ const createAdmin = async (req: Request, res: Response) => {
   } catch (error) {
     res.status(500).json({
       success: false,
-      message: error?.message || "Failed to create admin.",
+      // message: error?.message || "Failed to create admin.",
       error: (error as Error).message,
     });
   }
